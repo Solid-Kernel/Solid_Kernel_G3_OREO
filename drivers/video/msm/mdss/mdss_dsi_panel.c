@@ -55,11 +55,7 @@ lcd_maker_id get_panel_maker_id(void)
 EXPORT_SYMBOL(get_panel_maker_id);
 #endif
 
-#ifdef CONFIG_LGE_DEVFREQ_DFPS
-#define MIN_REFRESH_RATE 50
-#else
-#define MIN_REFRESH_RATE 30
-#endif
+#define MIN_REFRESH_RATE 60
 
 DEFINE_LED_TRIGGER(bl_led_trigger);
 #ifdef CONFIG_MACH_LGE_BACKLIGHT_SUPPORT
