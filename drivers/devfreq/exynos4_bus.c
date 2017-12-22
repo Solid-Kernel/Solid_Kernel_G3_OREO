@@ -772,7 +772,7 @@ static void exynos4_bus_exit(struct device *dev)
 
 static struct devfreq_dev_profile exynos4_devfreq_profile = {
 	.initial_freq	= 400000,
-	.polling_ms	= 50,
+	.polling_ms	= 0,
 	.target		= exynos4_bus_target,
 	.get_dev_status	= exynos4_bus_get_dev_status,
 	.exit		= exynos4_bus_exit,
@@ -1079,8 +1079,6 @@ static __devinit int exynos4_busfreq_probe(struct platform_device *pdev)
 
 	busfreq_mon_reset(data);
 
-	data->devfreq = devfreq_add_device(dev, &exynos4_devfreq_profile,
-					   "simple_ondemand", NULL);
 	if (IS_ERR(data->devfreq))
 		return PTR_ERR(data->devfreq);
 
