@@ -305,11 +305,11 @@ int force_fast_charge_init(void)
 {
 	int force_fast_charge_retval;
 
-	force_fast_charge     = FAST_CHARGE_FORCE_AC;	/* Forced fast charge disabled by default */
-	ac_charge_level       = AC_CHARGE_2000;		/* Default AC charge level to 2000mA/h    */
-	usb_charge_level      = USB_CHARGE_1500;	/* Default USB charge level to 1500mA/h   */
-	current_charge_level  = NOT_FAST_CHARGING;	/* Default to not fast charging           */
-	failsafe              = FAIL_SAFE_ENABLED;	/* Allow only values in list by default   */
+	force_fast_charge     = FAST_CHARGE_FORCE_CUSTOM_MA;	/* Forced fast charge disabled by default */
+	ac_charge_level       = AC_CHARGE_2000;			/* Default AC charge level to 2000mA/h    */
+	usb_charge_level      = USB_CHARGE_1500;		/* Default USB charge level to 1500mA/h   */
+	current_charge_level  = NOT_FAST_CHARGING;		/* Default to not fast charging           */
+	failsafe              = FAIL_SAFE_ENABLED;		/* Allow only values in list by default   */
 
         force_fast_charge_kobj = kobject_create_and_add("fast_charge", kernel_kobj);
         if (!force_fast_charge_kobj) {
