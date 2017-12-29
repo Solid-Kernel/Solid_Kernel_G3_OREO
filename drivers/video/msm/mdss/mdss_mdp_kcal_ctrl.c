@@ -23,7 +23,6 @@
 
 #include "mdss_mdp.h"
 
-#define DEF_PCC 0x100
 #define DEF_PA 0xff
 #define PCC_ADJ 0x80
 
@@ -405,13 +404,13 @@ static int kcal_ctrl_probe(struct platform_device *pdev)
 	platform_set_drvdata(pdev, lut_data);
 
 	lut_data->enable = 0x1;
-	lut_data->red = DEF_PCC;
-	lut_data->green = DEF_PCC;
-	lut_data->blue = DEF_PCC;
-	lut_data->minimum = 0x23;
+	lut_data->red = 0x100;
+	lut_data->green = 0xE6;
+	lut_data->blue = 0xD0;
+	lut_data->minimum = 0x80;
 	lut_data->invert = 0x0;
 	lut_data->hue = 0x0;
-	lut_data->sat = DEF_PA;
+	lut_data->sat = 0x50;
 	lut_data->val = DEF_PA;
 	lut_data->cont = DEF_PA;
 
